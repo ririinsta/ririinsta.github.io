@@ -7,34 +7,34 @@
         <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Poppins:wght@500&family=Roboto:wght@300;500&family=Urbanist&family=Rubik&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="css/modal.css" rel="stylesheet">
-        
-        <!-- <script src="js/setProductInfo.js"></script> -->
+        <script src="js/purchase.js"></script>
         <title id="title">SimpAzon | Item Name</title>
     </head>
     <body>
         <div class="header">
-            <a href="#" class="logo">SimpAzon</a>
+            <a href="index.html" class="logo">SimpAzon</a>
             <div class="header-right">
                 <a class="headeritem" class="" href="index.html"><center><span class="material-icons">&#xE88A;</span></center></a>
                 <a class="headeritem" id="orders" href="#"><center><span class="material-icons">&#xE158;</span></center></a>
                 <a class="headeritem" id="account" onclick="checkLogin();" href="javascript:void(0);"><center><span class="material-icons">&#xE87C;</span></center></a>
+                <a class="headeritem" id="debug" onclick="dmodelopen();" href="javascript:void(0);"><center><span class="material-icons">&#xEF3D;</span></center></a>
             </div>
         </div>
         <div class="info">
             <img class="productpicture" id="productpicture" src="img/1.png">
-            <h2 class="productname" id="productname">Test Item</h2>
+            <h2><span class="productname" id="productname">Test Item</span><span id="productindacator" class="material-icons">&#xE1D1;</span></h2> 
             <p class="description" id="discription">This is a Test Item</p>
         </div>
         <div class="buy">
             <h3 id="productprice" class="purchaseprice">C$</h3>
             <a class="purchase" onclick="modelOpen();" href="javascript:void(0);">
-                <span id="buytext" class="material-icons">Purchase</span>
+                <span id="buytext">Purchase</span>
             </a>
             <br>
             <br>
             <br>
             <a class="addtocart" href="javascript:void(0);">
-                <span id="carttext" class="material-icons">Add To Cart</span>
+                <span id="carttext">Add To Cart</span>
             </a>
         </div>
         <div id="purchasemodal" class="purchasemodal">
@@ -53,6 +53,18 @@
                     <br>
                     <input type="button" value="Login" onclick="login();">
                 </form>
+            </div>
+        </div>
+        <div id="debugmodal" class="debugmodal">
+            <div class="modal-content" style="">
+                <span id="dclose" class="material-icons" style="float: right;">&#xE5CD;</span>
+                <input type="number" id="amount">
+                <button onclick="setQuantity();">Set Current Item Quantity</button>
+                <br>
+                <input type="text" name="accounts" id="account-id">
+                <button onclick="loadaccounts();">Set account cookie</button>
+                <br>
+                <button onclick="setGithubLayout();">Set Github Layout</button>
             </div>
         </div>
     </body>
