@@ -2,6 +2,19 @@ var items = [document.getElementById("imq1"), document.getElementById("imq2"), d
 
 document.onload = onOpen();
 
+function setGithubLayout(){
+    setCookie("hardcoded", "ririinsta.github.io/product.html", 1);
+    setCookie("githubAccounts", '{"1": "Github"}', 1);
+    setCookie("githubCIDs", '{"1": "AAAA"}', 1);
+}
+
+function getUserDetails(){
+    if(getCookie("hardcoded") == "ririinsta.github.io/product.html"){
+        var user = getCookie("userid");
+        //var username =
+    }
+}
+
 function onOpen(){
     if(getCookie("userid") == ""){
         document.getElementById("orders").style.display = "none";
