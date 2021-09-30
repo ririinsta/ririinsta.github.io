@@ -15,9 +15,9 @@
             <div class="header-right">
                 <div class="header-right">
                     <a class="headeritem" class="" href="index.html"><center><span class="material-icons">&#xE88A;</span></center></a>
-                    <a class="headeritem" id="orders" href="#"><center><span class="material-icons">&#xE158;</span></center></a>
+                    <a class="headeritem" id="orders" onclick="omodalOpen();" href="javascript:void(0);"><center><span class="material-icons">&#xE158;</span></center></a>
                     <a class="headeritem" id="account" onclick="checkLogin();" href="javascript:void(0);"><center><span class="material-icons">&#xE87C;</span></center></a>
-                    <a class="headeritem" id="debug" onclick="dmodelopen();" href="javascript:void(0);"><center><span class="material-icons">&#xEF3D;</span></center></a>
+                    <a class="headeritem" id="debug" onclick="//dmodelopen();" href="javascript:void(0);"><center><span class="material-icons">&#xEF3D;</span></center></a>
                 </div>
             </div>
         </div>
@@ -115,18 +115,30 @@
                 </form>
             </div>
         </div>
-        <div id="loginmodal" class="loginmodal">
+        <div id="usermodal" class="usermodal" onload="//setUserDetails();" style="display: none;">
             <div class="modal-content" style="width: 200px;">
-                <span id="close" class="material-icons" style="float: right;">&#xE5CD;</span>
-                <p>Username: </p>
-                <p>Balance: </p>
-                <p>Orders: </p>
+                <span id="uclose" class="material-icons" style="float: right;">&#xE5CD;</span>
+                <p id="username">Username: </p>
+                <p id="balance">Balance: </p>
+                <p id="orderamount">Orders: </p>
             </div>
-        </div>
-        <script src="js/loginandshit.js"></script>
+        </div> 
+        <div id="ordermodal" class="ordermodal" onload="//setUserDetails();" style="display: none;">
+            <div class="modal-content" style="width: 200px;">
+                <span id="oclose" class="material-icons" style="float: right;">&#xE5CD;</span>
+                <table id="ordertable">
+
+                </table>
+            </div>
+        </div>   
+        <script src="js/login.js"></script>
         <script src="js/modal.js"></script>
         <script src="js/product.js"></script>
         <script src="js/setjuan.js"></script>
         <script src="js/homemodal.js"></script>
+        <script src="js/modalsetting.js"></script>
+        <script>
+            setUserDetails();
+        </script>
     </body>
 </html>
